@@ -179,15 +179,19 @@ static NSString * const kParameterCell = @"ParameterCell";
     }
     
     if (self.object) {
-//        [self addParameterWithName:@"Name"       value:self.object.name      ];
-        [self addParameterWithName:@"Item Name"  value:self.object.proxy.itemName                ];
-        [self addParameterWithName:@"Version"    value:self.object.proxy.shortVersionString      ];
-        [self addParameterWithName:@"Type"       value:self.object.proxy.applicationType         ];
-        [self addParameterWithName:@"Path"       value:[self.object.bundleData containerPath:YES]];
-        [self addParameterWithName:@"File"       value:[self.object.bundleData fileName]         ];
-        [self addParameterWithName:@"Vendor"     value:self.object.proxy.vendorName              ];
-        [self addParameterWithName:@"Identifier" value:self.object.proxy.applicationIdentifier   ];
-    
+//        [self addParameterWithName:@"Name"                     value:self.object.name      ];
+        [self addParameterWithName:@"Item Name"                value:self.object.proxy.itemName                ];
+        [self addParameterWithName:@"Version"                  value:self.object.proxy.shortVersionString      ];
+        [self addParameterWithName:@"Type"                     value:self.object.proxy.applicationType         ];
+        [self addParameterWithName:@"Path"                     value:[self.object.bundleData containerPath:YES]];
+        [self addParameterWithName:@"File"                     value:[self.object.bundleData fileName]         ];
+        [self addParameterWithName:@"Vendor"                   value:self.object.proxy.vendorName              ];
+        [self addParameterWithName:@"Device Family"            value:[self.object.proxy.deviceFamily componentsJoinedByString:@", "]];
+        [self addParameterWithName:@"Req. Device Capabilities" value:[self.object.proxy.requiredDeviceCapabilities componentsJoinedByString:@", "]];
+        [self addParameterWithName:@"Identifier"               value:self.object.proxy.applicationIdentifier   ];
+        [self addParameterWithName:@"Min. System Version"      value:self.object.proxy.minimumSystemVersion    ];
+        [self addParameterWithName:@"SDK Version"              value:self.object.proxy.sdkVersion              ];
+
 //        self.itemNameLabel.text   = self.object.itemName;
 //        self.versionLabel.text    = self.object.version;
 //        self.typeLabel.text       = self.object.type;
